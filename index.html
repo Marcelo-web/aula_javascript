@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Minha página</title>
+        <script type="text/javascript" src="js/main.js" ></script>
+        <style>
+            #agradecimento{cursor: pointer;}
+            p{width: 200px;}
+            div{display: inline;}
+            .sliderContainer{width: 100%;}
+            .slider{width: 100%; height: 20px;}
+            #temperaturaFar{
+                font-size: 30px;
+                width: 350px;
+            }
+        </style>
+    </head>
+    <body onload="load()">
+         <h1>Minha página</h1>
+
+         <button type="button" onclick="clicou()">Clique aqui</button>
+         <p id="agradecimento" onclick="redirecionar()"></p>
+         <p onmouseover="trocar(this)" onmouseout="voltar(this)">Passe o mouse aqui!</p>
+         <p onmouseover="trocar(this)" onmouseout="voltar(this)">Passe o mouse aqui!</p>
+         <p onmouseover="trocar(this)" onmouseout="voltar(this)">Passe o mouse aqui!</p>
+
+         <h3>Select</h3>
+         <select onchange="funcaoChange(this)">
+             <option value="1">Valor 1</option>
+             <option value="2">Valor 2</option>
+             <option value="3">Valor 3</option>
+         </select><br><br>
+
+         <h3>Radio</h3>
+         <div>
+             <label for="masculino">Masculino</label>
+             <input type="radio"  id="masculino" name="sexo" value="Masculino" onchange="mostrarValor(this)">
+         </div>
+
+         <div>
+             <label for="feminino">Feminino</label>
+             <input type="radio"  id="feminino" name="sexo" value="Feminino" onchange="mostrarValor(this)">
+         </div>
+         <p><i id="valorSelecionado">Valor selecionado</i></p>
+
+         <h3>Slider</h3>
+         <div class="sliderContainer">
+             <input type="range"  id="myRange" min="10" max="45" value="25"
+              class="slider" step="1" list="marcacao" onchange="obtemValorRange(this)">
+             <!--Não funciona em alguns navegadores-->
+             <datalist id="marcacao">
+                 <option value="10" label="0"></option>
+                 <option value="15"></option>
+                 <option value="20"></option>
+                 <option value="25" label="25"></option>
+                 <option value="30"></option>
+                 <option value="35"></option>
+                 <option value="40" label="40"></option>
+                 <option value="45"></option>
+             </datalist>
+             <p id="temperaturaFar"><b>Valor: <span id="result"></span></b></p>
+        
+
+    </body>
+</html>
